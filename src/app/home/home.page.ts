@@ -16,7 +16,7 @@ export class HomePage {
   ionViewDidEnter() {
     this.map = L.map('map').setView([-7.770115838142679, 110.37794672157405], 15);
 
-    // Define the different base maps
+   
     const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     });
