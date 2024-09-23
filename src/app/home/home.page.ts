@@ -29,31 +29,28 @@ export class HomePage {
       attribution: '© CartoDB'
     });
 
-    // Add the default base to the map
     osm.addTo(this.map);
 
-    // Define the icon options
+  
     const icon = L.icon({
       iconUrl: 'assets/leaflet/marker-icon.png',
       shadowUrl: 'assets/leaflet/marker-shadow.png',
-      iconSize: [25, 41], // size of the icon
-      iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
-      popupAnchor: [1, -34], // point from which the popup should open relative to the iconAnchor
-      shadowSize: [41, 41]  // size of the shadow
+      iconSize: [25, 41], 
+      iconAnchor: [12, 41], 
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]  
     });
 
-    // Add a marker to the map with the custom icon
     const marker = L.marker([-7.770115838142679, 110.37794672157405], { icon }).addTo(this.map);
     marker.bindPopup('UGM broo').openPopup();
 
-    // Define the base maps object
+    
     const baseMaps = {
       "OpenStreetMap": osm,
       "OpenTopoMap": satellite,
       "Dark": dark
     };
 
-    // Add the layer control to the map
     L.control.layers(baseMaps).addTo(this.map);
   }
 }
